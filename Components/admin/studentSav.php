@@ -18,39 +18,41 @@
     }
    
     ?>
-    <form class="container" method="POST">
-        <div class="editValue">
-        <div class="ed">
-            <label>Bank/Finance Name</label>
-            <input type="text" value="<?php echo $data['bank_name']?>">
-        </div>
+<div class="container">
+        <form class="containers">
+            <div class="editValue">
+            <div class="ed">
+                <label>Bank/Finance Name</label>
+                <input type="text" name="bank" value="<?php echo $data['bank_name']?>">
+            </div>
 
-        <div class="ed">
-            <label>Type</label>
-            <input type="text" value="<?php echo $data['type']?>">
+            <div class="ed">
+                <label>Type</label>
+                <input type="text" name="type" value="<?php echo $data['type']?>">
+            </div>
+    
+            <div class="ed">
+                <label>Minimum Balance</label>
+                <input type="number" name="sRate" value="<?php echo $data['minBalance']?>">
+            </div>
+    
+            <div class="ed">
+                <label>Interest Rate</label>
+                <input type="number" name="fRate" value="<?php echo $data['interest']?>">
+            </div>
+            </div>
+            <div class="editBtn">
+            <input type="submit" class="submit" value="Edit">
+            
+            </div>
+        </form>
+        <div class="cancel">
+            <a href="../../page/studentSaving.php">
+                <img src="../../assets/icon/multiply.png" alt="">
+            </a>
         </div>
+    </div>
 
-        <div class="ed">
-            <label>Saving Interest Rate</label>
-            <input type="number" value="<?php echo $data['interest']?>">
-        </div>
-
-        <div class="ed">
-            <label>Minimum Balance</label>
-            <input type="text" value="<?php echo $data['minBalance']?>">
-        </div>
-        </div>
-        <div class="editBtn">
-        <input type="submit" class="submit" value="Edit" name="" id="">
-        
-        </div>
-
-        
-
-</form>
-<a href="../../page/studentSaving.php">
-        <button class="submit">Cancel</button>
-        </a>
 
 </body>
 </html>

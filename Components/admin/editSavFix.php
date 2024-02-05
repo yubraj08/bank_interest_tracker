@@ -18,43 +18,35 @@
     }
    
     ?>
-    <form class="container">
-        <div class="editValue">
-        <div class="ed">
-            <label>Bank/Finance Name</label>
-            <input type="text" name="bank" value="<?php echo $data['name']?>">
-        </div>
-
-        <div class="ed">
-            <label>Saving Interest Rate</label>
-            <input type="number" name="sRate" value="<?php echo $data['saving_rate']?>">
-        </div>
-
-        <div class="ed">
-            <label>Fixed Interest Rate</label>
-            <input type="text" name="fRate" value="<?php echo $data['fixed_rate']?>">
-        </div>
-        </div>
-        <div class="editBtn">
-        <input type="submit" class="submit" value="Edit">
-        <a href="../../home/home.php">
-        <button class="submit">Cancel</button>
-        </a>
-        </div>
-
-        <?php
-         if(isset($_GET['bank'])){
-            $id =  $_GET['bank'];
+    <div class="container">
+        <form class="containers">
+            <div class="editValue">
+            <div class="ed">
+                <label>Bank/Finance Name</label>
+                <input type="text" name="bank" value="<?php echo $data['name']?>">
+            </div>
     
-          echo $id;
-        }
-
-        ?>
-
-
-        
-
-</form>
+            <div class="ed">
+                <label>Saving Interest Rate</label>
+                <input type="number" name="sRate" value="<?php echo $data['saving_rate']?>">
+            </div>
+    
+            <div class="ed">
+                <label>Fixed Interest Rate</label>
+                <input type="text" name="fRate" value="<?php echo $data['fixed_rate']?>">
+            </div>
+            </div>
+            <div class="editBtn">
+            <input type="submit" class="submit" value="Edit">
+            
+            </div>
+        </form>
+        <div class="cancel">
+            <a href="../../home/home.php">
+                <img src="../../assets/icon/multiply.png" alt="">
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
