@@ -73,9 +73,11 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     top: -1rem;
     right: -1rem;
+    cursor: pointer;
 }
 .cancel a img{
     height: 3rem;
+    cursor: pointer;
 }
 
 .submit{

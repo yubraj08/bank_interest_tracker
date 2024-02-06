@@ -19,7 +19,7 @@
    
     ?>
 <div class="container">
-        <form class="containers">
+        <form class="containers" method="POST">
             <div class="editValue">
             <div class="ed">
                 <label>Bank/Finance Name</label>
@@ -28,26 +28,30 @@
     
             <div class="ed">
                 <label>Student Interest Rate</label>
-                <input type="number" name="sRate" value="<?php echo $data['interest']?>">
+                <input type="number" step="0.0001" name="sRate" value="<?php echo $data['interest']?>">
             </div>
             </div>
             <div class="editBtn">
-            <input type="submit" class="submit" value="Edit">
+            <input type="submit" name="studentLoan" class="submit" value="Edit">
             
             </div>
         </form>
+        <?php include "../../Db/admin/edit/editBank.php" ?>
         <div class="cancel">
-            <a href="../../page/studentLoan.php">
+            <a onclick="onCancel()">
                 <img src="../../assets/icon/multiply.png" alt="">
             </a>
         </div>
     </div>
 
-<script>
-    const redirect = ()=>{
-        window.location.href = "../../home/home.php";
-    }
-</script>
+    <script>
+        const onCancel = ()=>{
+            const isConfirmed = confirm(`Are you sure you want to cancel process`);
+        if(isConfirmed){
+            window.location.href = "../../page/studentLoan.php";
+        }
+        }
+    </script>
 
 </body>
 </html>
