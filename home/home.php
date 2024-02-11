@@ -26,6 +26,9 @@
             <a href="../page/studentSaving.php" class="stlink">
                 <button class="checkStudent">Check Student Saving Interest</button>
             </a>
+            <a href="../Components/admin/Add/personal.php">
+                <button>Add</button>
+            </a>
                 <?php include "../Components/savingFixed.php" ?>
             </div>
         </div>

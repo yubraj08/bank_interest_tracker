@@ -20,6 +20,9 @@
             <a href="../home/home.php" class="stlink">
                 <button style="margin-left:-5rem" class="checkStudent">Home</button>
             </a>
+            <a href="../Components/admin/Add/student.php">
+                <button>Add</button>
+            </a>
             <div class="first">
            
                 <?php include "../Components/studentSaving.php" ?>

@@ -22,6 +22,9 @@
             <a href="../page/studentLoan.php" class="stlink">
                 <button class="checkStudent">Check Student Loan Interest</button>
             </a>
+            <a href="../Components/admin/Add/loan.php">
+                <button>Add</button>
+            </a>
                 <?php include "../Components/personalLoan.php" ?>
             </div>
         </div>
