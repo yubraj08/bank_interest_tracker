@@ -17,6 +17,11 @@
             </div>
 
             <div class="ed">
+                <label>Code</label>
+                <input type="text" name="code">
+            </div>
+
+            <div class="ed">
                 <label>Type</label>
                 <input type="text" name="type">
             </div>
@@ -36,7 +41,7 @@
             
             </div>
         </form>
-       
+        <?php include "../../../Db/admin/add/addBank.php" ?>
         <div class="cancel">
             <a onclick="onCancel()">
                 <img src="../../../assets/icon/multiply.png" alt="">

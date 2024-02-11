@@ -15,6 +15,11 @@
                 <label>Bank/Finance Name</label>
                 <input type="text" name="bank">
             </div>
+
+            <div class="ed">
+                <label>Code</label>
+                <input type="text" name="code">
+            </div>
     
             <div class="ed">
                 <label>Personal Interest Rate</label>
@@ -26,6 +31,8 @@
             
             </div>
         </form>
+
+        <?php include "../../../Db/admin/add/addBank.php" ?>
        
         <div class="cancel">
             <a onclick="onCancel()">
