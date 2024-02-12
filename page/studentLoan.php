@@ -20,9 +20,17 @@
             <a href="../loan/loan.php" class="stlink">
                 <button style="margin-left:-5rem" class="checkStudent">Home</button>
             </a>
-            <a href="../Components/admin/Add/stdLoan.php">
-                <button>Add</button>
-            </a>
+            <?php
+                if ($isAdmin == 1 ) {
+                    ?>
+                   <a href="../Components/admin/Add/stdLoan.php">
+                    <button>Add</button>
+                   </a>
+                    <?php
+                    
+                }
+            ?>
+            
             <div class="first">
            
                 <?php include "../Components/studentLoan.php" ?>

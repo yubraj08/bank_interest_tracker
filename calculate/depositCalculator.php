@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./style/home.css">
     <link rel="stylesheet" href="./style/style.css">
     <title>Deposit Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 <?php

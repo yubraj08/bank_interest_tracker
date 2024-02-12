@@ -47,7 +47,15 @@
                         <?php
                 }
             ?>
-            <a href="../logout/logout.php">Logout</a>
+            <a onclick="onCancel()" >Logout</a>
            
         </div>
     </div>
+    <script>
+        const onCancel = ()=>{
+            const isConfirmed = confirm(`Are you sure you want to Logout`);
+        if(isConfirmed){
+            window.location.href = "../logout/logout.php";
+        }
+        }
+    </script>
