@@ -6,40 +6,37 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="./style/landing.css">
     <link rel="stylesheet" href="./style/register.css">
-    <title>Register</title>
+    <title>Bank Login</title>
 </head>
 <body>
-    <?php include "../Components/navbar.php" ?>
+<?php include "../Components/navbar.php" ?>
     <div class="container1">
+
+         <div class="logins">
+            <img src="../assets/logo5.jpg" alt="">
+        </div>
+
         <div class="register">
-            <h1>Register</h1>
+            <h1>Bank Login</h1>
         <form method="POST">
             <div class="inputs">
                 <img src="../assets/user.png" alt="">
-                <input required type="text" name="username" placeholder="Username">
+                <input required type="text" name="username" placeholder="Bank Username">
             </div>
-            <div class="inputs">
-            <img src="../assets/email.png" alt="">
-                <input required type="email" name="email" placeholder="Email">
-            </div>
+            
             <div class="inputs">
             <img src="../assets/password.png" alt="">
                 <input required type="password" name="password" placeholder="Password">
             </div>
-            <div class="inputs">
-            <img src="../assets/password.png" alt="">
-                <input required type="password" name="cpassword" placeholder="Confirm Password">
-            </div>
+            
             <input type="submit" name="submit" class="button" >
         
         </form>
         </div>
-        <div class="registers">
-            <img src="../assets/logo4.jpg" alt="">
-        </div>
+        
     </div>
     <?php 
-    include "../Db/auth/dbRegister.php";
+    include "../Db/auth/dbBankLogin.php";
     ?>
 </body>
 </html>

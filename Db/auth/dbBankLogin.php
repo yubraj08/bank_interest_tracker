@@ -1,30 +1,31 @@
 <?php
-include "dbConnect.php";
+include "../Db/dbConnect.php";
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
    
 
-    $checkEmail = "select * from users where username = '$username' or email = '$username' ";
-    $sqls = mysqli_query($conn, $checkEmail);
+    $checkUser = "select * from saving_fixed where name = '$username'";
+    $sqls = mysqli_query($conn, $checkUser);
     $num = mysqli_fetch_assoc($sqls);
     if ($num == 0) {
-        echo "Username or Email does not exist";
+        echo "Bank name does not exist";
         exit();
     } 
 
 
 
-            $query = "select * from users where '$username' IN (username,email) AND password = '$password' ";
+            $query = "select * from saving_fixed where name = '$username' and code = '$password' ";
             $sql = mysqli_query($conn, $query);
             $result = mysqli_fetch_assoc($sql);
 
             if ($result > 0) {
 
-                echo "user logged";
+                echo "Bank user logged";
                 session_start();
-                $_SESSION['id'] = $result['id'];
-                $_SESSION['isAdmin'] = $result['isAdmin'];
+                $_SESSION['id'] = "none";
+                $_SESSION['isAdmin'] = "none";
+                $_SESSION['name'] = $result['name'];
              
 
                 header("Location: ../home/home.php?msg=Login_Sucess");

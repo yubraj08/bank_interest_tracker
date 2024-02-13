@@ -36,7 +36,7 @@
         
     </div>
     <?php 
-    include "../Db/dbLogin.php";
+    include "../Db/auth/dbLogin.php";
     ?>
 </body>
 </html>
