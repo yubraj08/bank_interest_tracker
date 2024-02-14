@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $query);
             <td style="text-align:center"><?php echo $row['interest'] ?></td>
 
             <?php
-                     if($isAdmin == 1){
+                     if($isAdmin == 1 || $bank !== "none"){
                         ?>
                         <td style="text-align:center">
                             <a href="../Components/admin/studentLoan.php?id=<?php echo $row['eid']?>">
@@ -22,8 +22,14 @@ $result = mysqli_query($conn, $query);
             src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt="">
                             </a>
                         </td>
-                    <td style="text-align:center"><img onclick="confirmDel('<?php echo $row['eid']; ?>','<?php echo $row['name']; ?>')" 
+                        <?php
+            if($bank == "none"){
+                ?>
+<td style="text-align:center"><img onclick="confirmDel('<?php echo $row['edid']; ?>','<?php echo $row['name']; ?>')" 
             src="../assets/icon/bin.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></td>
+                <?php
+            }
+            ?>
                         <?php
                         
                     }else{

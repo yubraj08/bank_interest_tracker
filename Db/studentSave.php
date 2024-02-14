@@ -46,8 +46,14 @@ $result = mysqli_query($conn, $query);
             src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt="">
                         </a>
                     </td>
-                    <td style="text-align:center"><img onclick="confirmDel('<?php echo $row['stid']; ?>','<?php echo $row['bank_name']; ?>')" 
+                    <?php
+            if($bank == "none"){
+                ?>
+<td style="text-align:center"><img onclick="confirmDel('<?php echo $row['stid']; ?>','<?php echo $row['bank_name']; ?>')" 
             src="../assets/icon/bin.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></td>
+                <?php
+            }
+            ?>
                     <?php
                 }
             ?>

@@ -4,6 +4,7 @@
 include "dbConnect.php";
 
 
+
 $query = "SELECT * FROM `personal_loan` LEFT JOIN star on personal_loan.pid = star.pdid and star.userId = '$userId' ORDER BY personal_loan.pid ASC";
 $result = mysqli_query($conn, $query);
 
@@ -42,8 +43,16 @@ $result = mysqli_query($conn, $query);
                     ?>
                     <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['pid']?>"><img onclick="editInterest()" 
             src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
-                    <td style="text-align:center"><img onclick="confirmDel('<?php echo $row['pid']; ?>','<?php echo $row['name']; ?>')" 
+            
+            <?php
+            if($bank == "none"){
+                ?>
+<td style="text-align:center"><img onclick="confirmDel('<?php echo $row['pid']; ?>','<?php echo $row['name']; ?>')" 
             src="../assets/icon/bin.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></td>
+                <?php
+            }
+            ?>
+
                     <?php
                 }
             ?>
