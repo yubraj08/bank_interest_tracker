@@ -3,8 +3,39 @@
 
 include "dbConnect.php";
 
+if($bank != "none"){
+ 
+    $personal = "select * from education_loan where name = '$bank' ";
+    $perRes = mysqli_query($conn,$personal);
 
-$query = "SELECT * FROM `education_loan` LEFT JOIN star on education_loan.eid = star.edid and star.userId = '$userId' ORDER BY education_loan.eid ASC";
+    $num = mysqli_num_rows($perRes);
+
+    if($num <= 0){
+        ?>
+        <tr>
+        <td style="text-align:center;padding:1rem" colspan=4>Empty</td>
+        </tr>
+        <?php
+    }else{
+        
+        while ($row = mysqli_fetch_assoc($perRes)) {
+            ?>
+            <tr>
+                <td><?php echo $row['name'] ?></td>
+                <td style="text-align:center"><?php echo $row['interest'] ?></td>
+                <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['eid']?>"><img onclick="editInterest()" 
+                src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
+                <?php
+    
+        }
+    }
+
+
+  
+
+}else{
+
+    $query = "SELECT * FROM `education_loan` LEFT JOIN star on education_loan.eid = star.edid and star.userId = '$userId' ORDER BY education_loan.eid ASC";
 $result = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -64,6 +95,10 @@ $result = mysqli_query($conn, $query);
         <?php
 
     }
+
+}
+
+
             
 
 ?>

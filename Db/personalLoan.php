@@ -3,10 +3,37 @@
 
 include "dbConnect.php";
 
+if($bank != "none"){
+ 
+    $personal = "select * from personal_loan where name = '$bank' ";
+    $perRes = mysqli_query($conn,$personal);
+
+    $num = mysqli_num_rows($perRes);
+
+    if($num <= 0){
+        ?>
+        <tr>
+        <td style="text-align:center;padding:1rem" colspan=3>Empty</td>
+        </tr>
+        <?php
+    }else{
+        while ($row = mysqli_fetch_assoc($perRes)) {
+            ?>
+            <tr>
+                <td><?php echo $row['name'] ?></td>
+                <td style="text-align:center"><?php echo $row['interest'] ?></td>
+                <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['pid']?>"><img onclick="editInterest()" 
+                src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
+                <?php
+    
+        }
+    }
 
 
-$query = "SELECT * FROM `personal_loan` LEFT JOIN star on personal_loan.pid = star.pdid and star.userId = '$userId' ORDER BY personal_loan.pid ASC";
-$result = mysqli_query($conn, $query);
+
+}else{
+    $query = "SELECT * FROM `personal_loan` LEFT JOIN star on personal_loan.pid = star.pdid and star.userId = '$userId' ORDER BY personal_loan.pid ASC";
+    $result = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
@@ -62,6 +89,9 @@ $result = mysqli_query($conn, $query);
         <?php
 
     }
+}
+
+
             
 
 ?>
