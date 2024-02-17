@@ -24,7 +24,7 @@ if($bank != "none"){
             <td><?php echo $row['name'] ?></td>
             <td style="text-align:center;padding:1rem"><?php echo $row['saving_rate'] ?></td>
             <td style="text-align:center"><?php echo $row['fixed_rate'] ?></td>
-            <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['sid']?>"><img onclick="editInterest()" 
+            <td style="text-align:center"><a href="../Components/admin/editSavFix.php?id=<?php echo $row['sid']?>"><img onclick="editInterest()" 
             src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
                 <?php
     
@@ -33,7 +33,7 @@ if($bank != "none"){
 
 
 }else{
-    $query = "SELECT * FROM `saving_fixed` LEFT JOIN star on saving_fixed.sid = star.sf and star.userId = '$userId' ORDER BY saving_fixed.sid ASC";
+    $query = "SELECT * FROM `saving_fixed` as sfi LEFT JOIN star on sfi.sid = star.sf and star.userId = '$userId' where sfi.status = 0 ORDER BY sfi.sid ASC";
 $result = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {

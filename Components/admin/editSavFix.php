@@ -9,6 +9,7 @@
 <body>
 <?php
     include "../../Db/dbConnect.php";
+    include "../../session/session.php";
      if(isset($_GET['id'])){
         $id =  $_GET['id'];
 
@@ -37,13 +38,23 @@
             </div>
             </div>
             <div class="editBtn">
-            <input type="submit" name="savFix" class="submit" value="Edit">
-            
+            <?php
+                if($bank == "none"){
+                    ?>
+                    <input type="submit" name="savFix" class="submit" value="Edit">
+                    <?php
+                }else{
+                    ?>
+                    <input type="submit" name="rsavFix" class="submit" value="Request Edit">
+                    <?php
+                }
+            ?>
             </div>
             
         </form>
         
         <?php include "../../Db/admin/edit/editBank.php" ?>
+        <?php include "../../Db/admin/edit/requestEdit.php" ?>
         <div class="cancel" >
             <a onclick="onCancel()">
                 <img src="../../assets/icon/multiply.png" alt="">

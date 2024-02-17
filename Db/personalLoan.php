@@ -32,7 +32,7 @@ if($bank != "none"){
 
 
 }else{
-    $query = "SELECT * FROM `personal_loan` LEFT JOIN star on personal_loan.pid = star.pdid and star.userId = '$userId' ORDER BY personal_loan.pid ASC";
+    $query = "SELECT * FROM `personal_loan` as pl LEFT JOIN star on pl.pid = star.pdid and star.userId = '$userId' where pl.status = 0 ORDER BY pl.pid ASC";
     $result = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {

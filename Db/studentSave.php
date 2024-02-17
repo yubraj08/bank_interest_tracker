@@ -6,7 +6,7 @@ include "dbConnect.php";
 
 if($bank != "none"){
  
-    $personal = "select * from student_saving where bank_name = '$bank' ";
+    $personal = "select * from student_saving where bank_name = '$bank' and status = 0 ";
     $perRes = mysqli_query($conn,$personal);
 
     $num = mysqli_num_rows($perRes);
@@ -18,7 +18,7 @@ if($bank != "none"){
                 <td style="text-align:center;padding:1rem"><?php echo $row['type'] ?></td>
                 <td style="text-align:center"><?php echo $row['interest'] ?></td>
                 <td style="text-align:center"><?php echo $row['minBalance'] ?></td>
-                <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['stid']?>"><img onclick="editInterest()" 
+                <td style="text-align:center"><a href="../Components/admin/studentSav.php?id=<?php echo $row['stid']?>"><img onclick="editInterest()" 
                 src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
                 <?php
     
@@ -36,7 +36,7 @@ if($bank != "none"){
 
 }else{
 
-    $query = "SELECT * FROM `student_saving` LEFT JOIN star on student_saving.stid = star.stdSav and star.userId = '$userId' ORDER BY student_saving.stid ASC";
+    $query = "SELECT * FROM `student_saving` as ss LEFT JOIN star on ss.stid = star.stdSav and star.userId = '$userId' where ss.status = 0 ORDER BY ss.stid ASC";
  
     $result = mysqli_query($conn, $query);
 

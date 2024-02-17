@@ -47,7 +47,22 @@
                         <?php
                 }
             ?>
-            <a onclick="onCancel()" >Logout</a>
+            <?php
+                if ($bank != "none" ) {
+                    ?>
+            <a href="../request/savingFixed.php">
+                <div class="ologo">
+                    <img src="../assets/icon/interview.png" alt="">
+                    <p>Request</p>
+                </div>
+            </a>
+                    <?php
+                }
+            ?>
+            <div class="ologo" onclick="onCancel()" style="cursor:pointer" >
+            <img src="../assets/icon/turn-off.png" alt="">    
+            <p>Logout</p>
+            </div>
            
         </div>
     </div>

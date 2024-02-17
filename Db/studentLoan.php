@@ -5,7 +5,7 @@ include "dbConnect.php";
 
 if($bank != "none"){
  
-    $personal = "select * from education_loan where name = '$bank' ";
+    $personal = "select * from education_loan where name = '$bank' and status = 0 ";
     $perRes = mysqli_query($conn,$personal);
 
     $num = mysqli_num_rows($perRes);
@@ -23,7 +23,7 @@ if($bank != "none"){
             <tr>
                 <td><?php echo $row['name'] ?></td>
                 <td style="text-align:center"><?php echo $row['interest'] ?></td>
-                <td style="text-align:center"><a href="../Components/admin/personal.php?id=<?php echo $row['eid']?>"><img onclick="editInterest()" 
+                <td style="text-align:center"><a href="../Components/admin/studentLoan.php?id=<?php echo $row['eid']?>"><img onclick="editInterest()" 
                 src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
                 <?php
     
@@ -35,7 +35,7 @@ if($bank != "none"){
 
 }else{
 
-    $query = "SELECT * FROM `education_loan` LEFT JOIN star on education_loan.eid = star.edid and star.userId = '$userId' ORDER BY education_loan.eid ASC";
+    $query = "SELECT * FROM `education_loan` as el LEFT JOIN star on el.eid = star.edid and star.userId = '$userId' where el.status = 0 ORDER BY el.eid ASC";
 $result = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {

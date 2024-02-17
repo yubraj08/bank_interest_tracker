@@ -17,7 +17,7 @@
         </div>
 
         <div class="register">
-            <h1>Login</h1>
+            <h1>User Login</h1>
         <form method="POST">
             <div class="inputs">
                 <img src="../assets/user.png" alt="">
