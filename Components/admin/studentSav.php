@@ -24,7 +24,7 @@
             <div class="editValue">
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" value="<?php echo $data['bank_name']?>">
+                <input type="text" name="bank" <?php if ($bank){echo "disabled";}?> value="<?php echo $data['bank_name']?>">
             </div>
 
             <div class="ed">

@@ -5,7 +5,7 @@ include "dbConnect.php";
 
 if($bank != "none"){
  
-    $personal = "select * from saving_fixed where name = '$bank' ";
+    $personal = "select * from saving_fixed where name = '$bank' and status = 0 ";
     $perRes = mysqli_query($conn,$personal);
 
     $num = mysqli_num_rows($perRes);

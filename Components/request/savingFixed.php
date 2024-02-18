@@ -8,6 +8,11 @@
     <title>Saving and Fixed Interest</title>
 </head>
 <body>
+    <?php
+        if(isset($_GET['type'])){
+            $type =  $_GET['type'];
+        }
+    ?>
     <div clas="savingFd">
        
         <center>
@@ -15,15 +20,50 @@
            <thead>
                 <tr>
                     <th>Bank/Finance</th>
-                    <th>Saving Account</th>
-                    <th>Fixed Account</th>
+                    <?php
+                        if($type == "savingFix"){
+                            ?>
+                                <th>Saving Account</th>
+                                <th>Fixed Account</th>
+                            <?php
+                        }
+                    ?>
+                    <?php
+                        if($type == "studentSave"){
+                            ?>
+                                <th>Type</th>
+                                <th>Interest</th>
+                                <th>Minimum Balance</th>
+                            <?php
+                        }
+                    ?>
+                    <?php
+                        if($type == "personalLoan"){
+                            ?>
+                                <th>Personal Loan</th>
+                            <?php
+                        }
+                    ?>
+                    <?php
+                        if($type == "studentLoan"){
+                            ?>
+                                <th>Student Loan</th>
+                            <?php
+                        }
+                    ?>
+
                     
-                    <th>Edit</th>
+                    <th>Status</th>
                        
                     
                 </tr>
            </thead>
-            <?php include "../Db/request/savingFixed.php" ?>
+           <?php
+                        if($type == "savingFix"){include "../Db/request/savingFixed.php";}
+                        else if($type == "studentSave"){include "../Db/request/studentSav.php";}
+                        else if($type == "personalLoan"){include "../Db/request/personalLoan.php";}
+                        else if($type == "studentLoan"){include "../Db/request/studentLoan.php";}
+                    ?>
         </table>
         </center>
         

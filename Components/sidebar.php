@@ -48,9 +48,9 @@
                 }
             ?>
             <?php
-                if ($bank != "none" ) {
+                if ($bank != "none" || $isAdmin == 1 ) {
                     ?>
-            <a href="../request/savingFixed.php">
+            <a href="../request/savingFixed.php?type=savingFix">
                 <div class="ologo">
                     <img src="../assets/icon/interview.png" alt="">
                     <p>Request</p>
