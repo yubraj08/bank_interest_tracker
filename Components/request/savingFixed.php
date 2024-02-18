@@ -52,8 +52,20 @@
                         }
                     ?>
 
+                    <?php
+                        if($isAdmin == 1){
+                            ?>
+                                <th>Requests</th>
+                            <?php
+                        }else{
+                            ?>
+                                 <th>Status</th>
+                            <?php
+                        }
+                    ?>
+
                     
-                    <th>Status</th>
+                   
                        
                     
                 </tr>

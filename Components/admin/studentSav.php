@@ -22,10 +22,16 @@
 <div class="container">
         <form class="containers" method="POST">
             <div class="editValue">
+            <?php
+                if($bank == "none"){
+                    ?>
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" <?php if ($bank){echo "disabled";}?> value="<?php echo $data['bank_name']?>">
+                <input type="text" name="bank" value="<?php echo $data['bank_name']?>">
             </div>
+                    <?php
+                }
+            ?>
 
             <div class="ed">
                 <label>Type</label>

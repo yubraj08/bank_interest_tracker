@@ -16,16 +16,24 @@
         $sql = "Select * from saving_fixed where sid = $id";
         $result = mysqli_query($conn, $sql);
         $data = mysqli_fetch_assoc($result);
+
     }
    
     ?>
     <div class="container">
         <form class="containers" method="POST">
             <div class="editValue">
+                
+            <?php
+                if($bank == "none"){
+                    ?>
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" <?php if ($bank){echo "disabled";}?> value="<?php echo $data['name']?>">
+                <input type="text" name="bank" value="<?php echo $data['name']?>">
             </div>
+                    <?php
+                }
+            ?>
     
             <div class="ed">
                 <label>Saving Interest Rate</label>
