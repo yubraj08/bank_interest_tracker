@@ -32,18 +32,6 @@
             </a>
         </div>
             <div class="first">
-                
-            <?php
-                if ($isAdmin == 1 ) {
-                    ?>
-                   <a href="../Components/admin/Add/personal.php">
-                    <button>Add</button>
-                   </a>
-                    <?php
-                    
-                }
-            ?>
-            
                 <?php include "../Components/request/savingFixed.php" ?>
             </div>
         </div>

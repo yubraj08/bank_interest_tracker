@@ -9,6 +9,18 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
+<?php
+        $banks = $_GET['bank'];
+     if(isset($_GET['rate'])){
+        $rate =  $_GET['rate'];
+        $bank = $_GET['bank'];
+        $type = $_GET['type'];
+        $userId = $_GET['userId'];
+
+    }else{
+        $userId = 0;
+    }
+    ?>
     <?php
          if(isset($_GET['rate'])){
             $rate =  $_GET['rate'];
@@ -25,6 +37,13 @@
         <a href="calculate.php">Switch</a>
             <div class="insert">
                 <form class="first" method="POST">
+                <?php
+                if($banks != "none"){
+                    ?>
+                        <h1><?php echo $bank = $_GET['bank'];?></h1>
+                    <?php
+                }
+                ?>
                 <div class="inputValue">
                 <div class="in">
                 <label>Deposit Amount (In Rupees)</label>
@@ -68,7 +87,7 @@
             <div class="display">
             
             <div>
-                <label>Principle : </label>
+                <label>Principle : Rs. </label>
                 <span><?php echo number_format($amount, 0, '', ',');?></span>
             </div>
             <div>
@@ -80,21 +99,30 @@
                 </span>
             </div>
             <div>
-                <label>Maturity Amount : </label>
+                <label>Maturity Amount : Rs. </label>
                 <span><?php echo number_format($total, 0, '', ',')?></span>
             </div>
             <div>
-                <label>Interest Amount : </label>
+                <label>Interest Amount : Rs. </label>
                 <span><?php echo number_format($saving, 0, '', ',');?></span>
             </div>
+            <?php
+            if($bank != "none" && $amount > 0){
+                ?>
+        <div class="saveBtn">
+            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rate?>',
+            '<?php echo $emi?>','<?php echo $total?>','<?php echo $bank?>',
+            '<?php echo $type?>','<?php echo $userId?>')">Save this data</button>
+        </div>
+                <?php
+            }
+        ?>
             </div>
             
 
         
         </div>
-        <div class="saveBtn">
-            <button>Save this data</button>
-        </div>
+
     </div>
     <script>
          function validateInterestRate() {

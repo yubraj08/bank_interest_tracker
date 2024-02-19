@@ -68,7 +68,7 @@ if($bank != "none"){
             </td>
 
             <td style="text-align:center">
-            <a href="../calculate/depositCalculator.php?rate=<?php echo $row['interest']?>&minBal=<?php echo $row['minBalance']?>"><img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem" alt=""></a>
+            <a href="../calculate/depositCalculator.php?rate=<?php echo $row['interest']?>&minBal=<?php echo $row['minBalance']?>&bank=<?php echo $row['bank_name']?>&type=<?php echo $row['type']?>&userId=<?php echo $userId?>"><img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem" alt=""></a>
             </td>
                     <?php
                 }else{

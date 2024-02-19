@@ -60,7 +60,7 @@ if($bank != "none"){
 
             
             <td style="text-align:center">
-            <a href="../calculate/calculate.php?rate=<?php echo $row['interest']?>">
+            <a href="../calculate/calculate.php?rate=<?php echo $row['interest']?>&bank=<?php echo $row['name']?>&type=Personal Loan&userId=<?php echo $userId?>">
             <img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem" alt="">
             </a>
             </td>

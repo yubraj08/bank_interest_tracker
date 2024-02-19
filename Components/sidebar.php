@@ -26,7 +26,7 @@
             <?php
                 if ($isAdmin == 0 ) {
                         ?>
-                     <a href="../calculate/calculate.php">
+                     <a href="../calculate/calculate.php?bank=none">
                 <div class="ologo">
                     <img src="../assets/icon/calculate.png" alt="">
                     <p>Calculate</p>

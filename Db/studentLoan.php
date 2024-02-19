@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $query);
             </td>
 
             <td style="text-align:center">
-            <a href="../calculate/calculate.php?rate=<?php echo $row['interest']?>">
+            <a href="../calculate/calculate.php?rate=<?php echo $row['interest']?>&bank=<?php echo $row['name']?>&type=Student Loan&userId=<?php echo $userId?>">
             <img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt="">
             </a>
         </td>
