@@ -38,7 +38,7 @@
                     <p>Starred</p>
                 </div>
             </a>
-            <a href="">
+            <a href="../history/saving.php">
                 <div class="ologo">
                     <img src="../assets/icon/history.png" alt="">
                     <p>History</p>
