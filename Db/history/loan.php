@@ -13,16 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $query  =   mysqli_query($conn, $check);
     $result = mysqli_fetch_assoc($query);
 
-
-   
         $insertQuery = "INSERT INTO history (isStar,stdSav,userId,bank,types,interests) VALUES ('1','$id','$userId','$bank','$type','$interest')";
         mysqli_query($conn, $insertQuery);
         echo 'Bank name saved successfully';
         exit();
-
-     
-
-    
+ 
 } 
 
 
