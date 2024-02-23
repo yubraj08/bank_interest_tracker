@@ -34,7 +34,13 @@
         </div>
         <div class="calculate">
         <h1>Saving Calculator</h1>
-        <a href="calculate.php">Switch</a>
+        <?php
+                if($banks == "none"){
+                    ?>
+                            <a href="depositCalculator.php?bank=none">Switch</a>
+                    <?php
+                }
+                ?>
             <div class="insert">
                 <form class="first" method="POST">
                 <?php
@@ -143,7 +149,7 @@
             // Set focus back to the input field
             rateInput.focus();
         }
-        if (rateValue < 0) {
+        if (rateValue <= 0) {
             // Display an error message
             alert("Error: Interest rate cannot be lower than 0.1.");
             
@@ -155,7 +161,7 @@
         }
     }
 
-    function saveData(princ,time,rate,emi,total,bank,type,userId){
+    function saveData(princ,time,rate,tax,total,bank,type,userId){
         console.log(bank)
 $.ajax({
        type: 'POST',
@@ -163,7 +169,8 @@ $.ajax({
        data: { princ : princ,
         time : time,
         rate : rate,
-        emi : emi,
+        tax : tax,
+        type : type,
         total : total,
         bank : bank,
         userId : userId},

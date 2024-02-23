@@ -12,19 +12,13 @@
 <?php
 
     $banks = $_GET['bank'];
-     if(isset($_GET['rate'])){
-        $rate =  $_GET['rate'];
-
-
-    }
-    ?>
-<?php
      if(isset($_GET['srate'])){
         $rate =  $_GET['srate'];
-        $bank = $_GET['bank'];
+
 
     }
     ?>
+
 
     <div class="container">
         <div class="side">
@@ -34,7 +28,13 @@
         </div>
         <div class="calculate">
         <h1>Deposit Calculator</h1>
-        <a href="calculate.php?bank=none">Switch</a>
+        <?php
+                if($banks == "none"){
+                    ?>
+                            <a href="depositCalculator.php?bank=none">Switch</a>
+                    <?php
+                }
+                ?>
             <div class="insert">
              
                 <form class="first" method="POST">
@@ -162,7 +162,7 @@
             // Set focus back to the input field
             rateInput.focus();
         }
-        if (rateValue < 0) {
+        if (rateValue <= 0) {
             // Display an error message
             alert("Error: Interest rate cannot be lower than 0.1.");
             

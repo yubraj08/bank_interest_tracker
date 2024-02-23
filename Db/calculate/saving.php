@@ -3,7 +3,7 @@
 include "../../Db/dbConnect.php";
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['emi'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tax'])) {
     $userId = mysqli_real_escape_string($conn, $_POST['userId']);
     $bank = mysqli_real_escape_string($conn, $_POST['bank']);
     $princ = mysqli_real_escape_string($conn, $_POST['princ']);
@@ -11,19 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['emi'])) {
     $rate = mysqli_real_escape_string($conn, $_POST['rate']);
     $tax = mysqli_real_escape_string($conn, $_POST['tax']);
     $total = mysqli_real_escape_string($conn, $_POST['total']);
+    $type = mysqli_real_escape_string($conn, $_POST['type']);
 
 
-    
-    // $check = "delete from star where starid = '$id'";
-    // $query  =   mysqli_query($conn, $check);
-   
+    $totals =  number_format($total, 0, '', ',');
+    $taxs = number_format($tax, 0, '', ',');
 
-    // if($query){
-        
-    //     echo "deleted '$bank'";
-    // }else{
-    //     echo "error";
-    // }
+    $result = "INSERT INTO history (userId,bank,type,principle,time,rate,result,total) values ('$userId','$bank','$type','$princ','$time','$rate','$taxs','$totals')";
+
+    $sql = mysqli_query($conn,$result);
+    if($sql){
+        echo "Inserted into history";
+    }
 
     
 } 

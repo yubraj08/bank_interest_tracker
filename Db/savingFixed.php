@@ -62,6 +62,8 @@ $result = mysqli_query($conn, $query);
             </td>
             <td style="text-align:center">
             <a href="../calculate/depositCalculator.php?srate=<?php echo $row['saving_rate']?>&frate=<?php echo $row['fixed_rate']?>&bank=<?php echo $row['name']?>&userId=<?php echo $userId?>">
+            <p>Saving</p>
+            <p>Fixed</p>
             <img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem" alt="">
             </a>
             </td>

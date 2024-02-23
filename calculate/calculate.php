@@ -33,7 +33,14 @@
         </div>
         <div class="calculate">
         <h1>EMI Calculator</h1>
-        <a href="depositCalculator.php?bank=none">Switch</a>
+        <?php
+                if($banks == "none"){
+                    ?>
+                            <a href="depositCalculator.php?bank=none">Switch</a>
+                    <?php
+                }
+                ?>
+  
             <div class="insert">
             
                 <form class="first" method="POST">
@@ -73,6 +80,7 @@
                 $total = 0;
                 if(isset($_POST['submit'])){
                     $amount = $_POST['amount'];
+                    $rates = $_POST['rate'];
                     $rate = $_POST['rate']/12/100;
                     $year = $_POST['time'];
                     $time = $_POST['time']*12;
@@ -114,7 +122,7 @@
             if($bank != "none" && $amount > 0){
                 ?>
         <div class="saveBtn">
-            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rate?>',
+            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rates?>',
             '<?php echo $emi?>','<?php echo $total?>','<?php echo $bank?>',
             '<?php echo $type?>','<?php echo $userId?>')">Save this data</button>
         </div>
@@ -147,9 +155,9 @@
             // Set focus back to the input field
             rateInput.focus();
         }
-        if (rateValue < 0) {
+        if (rateValue <= 0) {
             // Display an error message
-            alert("Error: Interest rate cannot be lower than 0.1.");
+            alert("Error: Interest rate cannot be lower than 0");
             
             // Clear the input field
             rateInput.value = '';
@@ -171,7 +179,8 @@ $.ajax({
         emi : emi,
         total : total,
         bank : bank,
-        userId : userId
+        userId : userId,
+        type :type
 
     },
        success: function(response) {

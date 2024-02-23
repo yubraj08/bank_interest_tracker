@@ -11,20 +11,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['emi'])) {
     $rate = mysqli_real_escape_string($conn, $_POST['rate']);
     $emi = mysqli_real_escape_string($conn, $_POST['emi']);
     $total = mysqli_real_escape_string($conn, $_POST['total']);
+    $type = mysqli_real_escape_string($conn, $_POST['type']);
 
 
     $totals =  number_format($total, 0, '', ',');
-    echo $totals;
-    // $check = "delete from star where starid = '$id'";
-    // $query  =   mysqli_query($conn, $check);
-   
+    $emis = number_format($emi, 0, '', ',');
 
-    // if($query){
-        
-    //     echo "deleted '$bank'";
-    // }else{
-    //     echo "error";
-    // }
+    $result = "INSERT INTO history (userId,bank,type,principle,time,rate,result,total) values ('$userId','$bank','$type','$princ','$time','$rate','$emis','$totals')";
+
+    $sql = mysqli_query($conn,$result);
+    if($sql){
+        echo "Inserted into history";
+    }
+
 
     
 } 
