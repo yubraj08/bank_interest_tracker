@@ -61,12 +61,20 @@ $result = mysqli_query($conn, $query);
              ?>" style="height:1.6rem;width:1.6rem;cursor:pointer" alt="">
             </td>
             <td style="text-align:center">
-            <a href="../calculate/depositCalculator.php?srate=<?php echo $row['saving_rate']?>&frate=<?php echo $row['fixed_rate']?>&bank=<?php echo $row['name']?>&userId=<?php echo $userId?>">
-            <p>Saving</p>
-            <p>Fixed</p>
-            <img src="../assets/icon/calculate.png" style="height:1.6rem;width:1.6rem" alt="">
+  
+             
+
+                        <a href="../calculate/simpleCalculate.php?rate=<?php echo $row['saving_rate']?>&bank=<?php echo $row['name']?>&type=Saving Account&userId=<?php echo $userId?>" 
+                        style="text-decoration:none;color:inherit;border:1px solid black;">
+            Saving Account
             </a>
-            </td>
+            <br>
+            <br>
+            <a href="../calculate/depositCalculator.php?rate=<?php echo $row['fixed_rate']?>&bank=<?php echo $row['name']?>&type=Fixed Account&userId=<?php echo $userId?>" 
+            style="text-decoration:none;color:inherit;border:1px solid black;">
+            Fixed Account
+            </a>
+                        
 
                     <?php
                 }else{

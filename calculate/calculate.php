@@ -185,7 +185,7 @@ $.ajax({
     },
        success: function(response) {
            console.log(response); // Log the server's response (you can handle it accordingly)
-        //    location.reload()
+           window.location.href = '../history/loan.php?msg=Inserted';
        }
    });
     }

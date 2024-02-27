@@ -1,8 +1,8 @@
 <?php
 
-include "../../Db/dbConnect.php";
+include "../Db/dbConnect.php";
 
-$personal = "select * from saving_fixed where name = '$bank' and status = 0 ";
+$personal = "select * from history where userId = '$userId' and type not in ('Student Loan','Personal Loan') order by hid desc";
 $perRes = mysqli_query($conn,$personal);
 
 $num = mysqli_num_rows($perRes);
@@ -10,7 +10,7 @@ $num = mysqli_num_rows($perRes);
 if($num <= 0){
     ?>
     <tr>
-    <td style="text-align:center;padding:1rem" colspan=4>Empty</td>
+    <td style="text-align:center;padding:1rem" colspan=7>Empty</td>
     </tr>
     <?php
 }else{
@@ -18,11 +18,13 @@ if($num <= 0){
      while ($row = mysqli_fetch_assoc($perRes)) {
         ?>
         <tr>
-        <td><?php echo $row['name'] ?></td>
-        <td style="text-align:center;padding:1rem"><?php echo $row['saving_rate'] ?></td>
-        <td style="text-align:center"><?php echo $row['fixed_rate'] ?></td>
-        <td style="text-align:center"><a href="../Components/admin/editSavFix.php?id=<?php echo $row['sid']?>"><img onclick="editInterest()" 
-        src="../assets/icon/edit.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></a></td>
+        <td><?php echo $row['bank'] ?></td>
+        <td style="text-align:center;padding:1rem"><?php echo $row['type'] ?></td>
+        <td style="text-align:center"><?php echo $row['principle'] ?></td>
+        <td style="text-align:center"><?php echo $row['time'] ?></td>
+        <td style="text-align:center"><?php echo $row['rate'] ?></td>
+        <td style="text-align:center"><?php echo $row['result'] ?></td>
+        <td style="text-align:center"><?php echo $row['total'] ?></td>
             <?php
 
     }

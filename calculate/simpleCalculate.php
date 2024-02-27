@@ -17,6 +17,7 @@
         $type = $_GET['type'];
         $userId = $_GET['userId'];
 
+
     }else{
         $userId = 0;
     }
@@ -77,16 +78,20 @@
                 $amount = 0;
                 $payable = 0;
                 $total = 0;
+                $tax = 0;
                 
                 if(isset($_POST['submit'])){
                     $amount = $_POST['amount'];
+                    $rates = $_POST['rate'];
                     $rate = $_POST['rate']/100;
+
                     $time = $_POST['time'];
                     
 
                     $saving = $amount * $time * $rate;
 
                     $total = $saving + $amount;
+                    $tax = $total * 0.05;
                     
                 }
             ?>
@@ -109,17 +114,25 @@
                 <span><?php echo number_format($total, 0, '', ',')?></span>
             </div>
             <div>
+                <label>Tax Amount : Rs. </label>
+                <span><?php echo number_format($tax, 0, '', ',');?></span>
+            </div>
+            <div>
                 <label>Interest Amount : Rs. </label>
                 <span><?php echo number_format($saving, 0, '', ',');?></span>
             </div>
             <?php
             if($bank != "none" && $amount > 0){
                 ?>
+
         <div class="saveBtn">
-            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rate?>',
+            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rates?>',
             '<?php echo $tax?>','<?php echo $total?>','<?php echo $bank?>',
-            '<?php echo $type?>','<?php echo $userId?>')">Save this data</button>
+            '<?php echo $type?>','<?php echo $userId?>')">
+            Save this data
+            </button>
         </div>
+
                 <?php
             }
         ?>
@@ -176,7 +189,7 @@ $.ajax({
         userId : userId},
        success: function(response) {
            console.log(response); // Log the server's response (you can handle it accordingly)
-           location.reload()
+           window.location.href = '../history/saving.php?msg=Inserted';
        }
    });
     }

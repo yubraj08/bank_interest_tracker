@@ -24,7 +24,7 @@
 
                 </tr>
            </thead>
-            <?php include "../Db/savingFixed.php" ?>
+            <?php include "../Db/history/loan.php" ?>
         </table>
         </center>
         

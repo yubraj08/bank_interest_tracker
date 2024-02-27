@@ -12,8 +12,11 @@
 <?php
 
     $banks = $_GET['bank'];
-     if(isset($_GET['srate'])){
-        $rate =  $_GET['srate'];
+     if(isset($_GET['rate'])){
+        $rate =  $_GET['rate'];
+        $bank = $_GET['bank'];
+        $type = $_GET['type'];
+        $userId = $_GET['userId'];
 
 
     }
@@ -85,6 +88,7 @@
                 $total = 0;
                 $tax = 0;
                 if(isset($_POST['submit'])){
+                    $rates = $_POST['rate'];
                     $amount = $_POST['amount'];
                     $rate = $_POST['rate']/100;
                     $time = $_POST['time'];
@@ -128,9 +132,11 @@
             if($bank != "none" && $amount > 0){
                 ?>
         <div class="saveBtn">
-            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rate?>',
-            '<?php echo $tax?>','<?php echo $total?>','<?php echo $bank?>',
-            '<?php echo $type?>','<?php echo $userId?>')">Save this data</button>
+            <button onclick="saveData('<?php echo $amount?>','<?php echo $time?>','<?php echo $rates?>',
+            '<?php echo $tax?>','<?php echo $maturity?>','<?php echo $bank?>',
+            '<?php echo $type?>','<?php echo $userId?>')">
+                Save this data
+            </button>
         </div>
                 <?php
             }
@@ -173,24 +179,26 @@
             rateInput.focus();
         }
     }
-    function saveData(princ,time,rate,emi,total,bank,type,userId){
-        console.log(sidf)
+    function saveData(princ,time,rate,tax,total,bank,type,userId){
+        console.log(bank)
 $.ajax({
        type: 'POST',
        url: '../Db/calculate/saving.php', // Specify the server-sidfe script to handle the data
        data: { princ : princ,
         time : time,
         rate : rate,
-        emi : emi,
+        tax : tax,
+        type:type,
         total : total,
         bank : bank,
         userId : userId},
        success: function(response) {
            console.log(response); // Log the server's response (you can handle it accordingly)
-           location.reload()
+           window.location.href = '../history/saving.php?msg=Inserted';
        }
    });
     }
     </script>
+
 </body>
 </html>
