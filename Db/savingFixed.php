@@ -65,13 +65,13 @@ $result = mysqli_query($conn, $query);
              
 
                         <a href="../calculate/simpleCalculate.php?rate=<?php echo $row['saving_rate']?>&bank=<?php echo $row['name']?>&type=Saving Account&userId=<?php echo $userId?>" 
-                        style="text-decoration:none;color:inherit;border:1px solid black;">
+                        style="text-decoration:none;color:inherit;">
             Saving Account
             </a>
             <br>
             <br>
             <a href="../calculate/depositCalculator.php?rate=<?php echo $row['fixed_rate']?>&bank=<?php echo $row['name']?>&type=Fixed Account&userId=<?php echo $userId?>" 
-            style="text-decoration:none;color:inherit;border:1px solid black;">
+            style="text-decoration:none;color:inherit;">
             Fixed Account
             </a>
                         

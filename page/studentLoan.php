@@ -17,9 +17,7 @@
             <div class="sbtn">
                 <?php include "../Components/search.php" ?>
             </div>
-            <a href="../loan/loan.php" class="stlink">
-                <button style="margin-left:-5rem" class="checkStudent">Home</button>
-            </a>
+
             <?php
                 if ($isAdmin == 1 ) {
                     ?>

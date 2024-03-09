@@ -18,12 +18,10 @@
         </div>
         <div class="deposit">
             <div class="sbtn">
-                <?php include "../Components/search.php" ?>
+                <?php include "../Components/homenav.php" ?>
             </div>
             <div class="first">
-            <a href="./saving.php" class="stlink">
-                <button class="checkStudent">Check Saving Calculate History</button>
-            </a>
+
                 <?php include "../Components/history/loan.php" ?>
             </div>
         </div>

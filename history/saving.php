@@ -18,13 +18,9 @@
         </div>
         <div class="deposit">
             <div class="sbtn">
-                <?php include "../Components/search.php" ?>
+                <?php include "../Components/homenav.php" ?>
             </div>
             <div class="first">
-            <a href="./loan.php" class="stlink">
-                <button class="checkStudent">Check Loan Calculate History</button>
-            </a>
-            
             
                 <?php include "../Components/history/saving.php" ?>
             </div>

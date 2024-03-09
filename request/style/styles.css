@@ -14,29 +14,21 @@
 .deposit{
     background-color: rgba(0, 0, 0, 0.063);
     width: 100vw;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
    
 }
-.banks{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 0.5rem;
-
-}
 .sbtn{
     background-color: transparent;
     position: absolute;
-    right: 3rem;
+    top: 0;
+    margin-bottom: 2rem;
  
 }
 .first{
-    margin-top: 5rem;
+    margin-top: 7rem;
     background-color: white;
     border-radius: 1rem;
     width: 70vw;

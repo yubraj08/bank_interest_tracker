@@ -19,9 +19,7 @@
                 <?php include "../Components/search.php" ?>
             </div>
             <div class="first">
-            <a href="../page/studentLoan.php" class="stlink">
-                <button class="checkStudent">Check Student Loan Interest</button>
-            </a>
+
             <?php
                 if ($isAdmin == 1 ) {
                     ?>

@@ -11,44 +11,27 @@
     <nav>
 
         <div class="banks">
-            <a href="../home/home.php">
+            <a href="../request/savingFixed.php?type=savingFix">
             <div class="firsts">
                 Saving and Fixed
             </div>
             </a>
-            <a href="../page/studentSaving.php">
+            <a href="../request/studentSav.php?type=studentSave">
             <div class="firsts">
                 Student Saving
             </div>
             </a>
-            <a href="../loan/loan.php">
+            <a href="../request/personalLoan.php?type=personalLoan">
             <div class="firsts">
                 Personal Loan
             </div>
             </a>
-            <a href="../page/studentLoan.php">
+            <a href="../request/studentLoan.php?type=studentLoan">
             <div class="firsts">
                 Student Loan
             </div>
             </a>
         </div>
-
-        <?php
-                    if ($bank !== "none") {
-                        ?>
-
-                    
-                        <?php
-                        
-                    }else{
-                        ?>
-        <div class="search">
-            <input type="text" placeholder="Search">
-            <img src="../assets/icon/search.png" alt="">
-
-        </div>
-                        <?php
-                    }?>
 
 
     
