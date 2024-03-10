@@ -13,11 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['emi'])) {
     $total = mysqli_real_escape_string($conn, $_POST['total']);
     $type = mysqli_real_escape_string($conn, $_POST['type']);
 
+    $times = $time/12;
 
     $totals =  number_format($total, 0, '', ',');
     $emis = number_format($emi, 0, '', ',');
 
-    $result = "INSERT INTO history (userId,bank,type,principle,time,rate,result,total) values ('$userId','$bank','$type','$princ','$time','$rate','$emis','$totals')";
+    $result = "INSERT INTO history (userId,bank,type,principle,time,rate,result,total) values ('$userId','$bank','$type','$princ','$times','$rate','$emis','$totals')";
 
     $sql = mysqli_query($conn,$result);
     if($sql){

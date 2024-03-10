@@ -34,14 +34,17 @@
         ?>
         </div>
         <div class="calculate">
-        <h1>Saving Calculator</h1>
         <?php
                 if($banks == "none"){
                     ?>
-                            <a href="depositCalculator.php?bank=none">Switch</a>
-                    <?php
+        <div class="sbtn1">
+                <?php include "../Components/calculateNav.php" ?>
+            </div>
+            <?php
                 }
                 ?>
+        <h1>Saving Account Calculator</h1>
+
             <div class="insert">
                 <form class="first" method="POST">
                 <?php

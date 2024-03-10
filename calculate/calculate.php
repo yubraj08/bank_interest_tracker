@@ -32,14 +32,17 @@
         ?>
         </div>
         <div class="calculate">
-        <h1>EMI Calculator</h1>
         <?php
                 if($banks == "none"){
                     ?>
-                            <a href="depositCalculator.php?bank=none">Switch</a>
-                    <?php
+        <div class="sbtn1">
+                <?php include "../Components/calculateNav.php" ?>
+            </div>
+            <?php
                 }
                 ?>
+        <h1>EMI Calculator</h1>
+
   
             <div class="insert">
             

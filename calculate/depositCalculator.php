@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/home.css">
+
     <link rel="stylesheet" href="./style/style.css">
     <title>Deposit Calculator</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -29,15 +29,21 @@
              include "../Components/sidebar.php"
         ?>
         </div>
+
         <div class="calculate">
-        <h1>Deposit Calculator</h1>
         <?php
                 if($banks == "none"){
                     ?>
-                            <a href="depositCalculator.php?bank=none">Switch</a>
-                    <?php
+        <div class="sbtn1">
+                <?php include "../Components/calculateNav.php" ?>
+            </div>
+            <?php
                 }
                 ?>
+        <h1>Fixed Deposit Calculator</h1>
+
+
+   
             <div class="insert">
              
                 <form class="first" method="POST">

@@ -24,7 +24,7 @@
                 if ($isAdmin == 1 ) {
                     ?>
                    <a href="../Components/admin/Add/loan.php">
-                    <button>Add</button>
+                    <button>Add Bank</button>
                    </a>
                     <?php
                     

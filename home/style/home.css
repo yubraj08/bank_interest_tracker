@@ -33,4 +33,20 @@
     border-radius: 1rem;
     width: 70vw;
     align-items: center;
+    position: relative;
 }
+
+.first a button{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    margin: 1rem;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+}
+

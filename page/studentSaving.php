@@ -18,18 +18,19 @@
                 <?php include "../Components/search.php" ?>
             </div>
 
+
+           
+            <div class="first">
             <?php
                 if ($isAdmin == 1 ) {
                     ?>
                    <a href="../Components/admin/Add/student.php">
-                    <button>Add</button>
+                    <button>Add Bank</button>
                    </a>
                     <?php
                     
                 }
             ?>
-           
-            <div class="first">
            
                 <?php include "../Components/studentSaving.php" ?>
             </div>

@@ -9,9 +9,7 @@
     <title>Home</title>
 </head>
 <body>
-  <!-- <button>
-    <a href="../logout/logout.php">logout</a>
-  </button> -->
+
     <div class="container">
         <div class="side">
         <?php
@@ -28,7 +26,7 @@
                 if ($isAdmin == 1 ) {
                     ?>
                    <a href="../Components/admin/Add/personal.php">
-                    <button>Add</button>
+                    <button>Add Bank</button>
                    </a>
                     <?php
                     

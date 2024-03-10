@@ -56,7 +56,7 @@ $result = mysqli_query($conn, $query);
                         <?php
             if($bank == "none"){
                 ?>
-<td style="text-align:center"><img onclick="confirmDel('<?php echo $row['edid']; ?>','<?php echo $row['name']; ?>')" 
+<td style="text-align:center"><img onclick="confirmDel('<?php echo $row['eid']; ?>','<?php echo $row['name']; ?>')" 
             src="../assets/icon/bin.png" style="height:1.6rem;width:1.6rem;cursor:pointer" alt=""></td>
                 <?php
             }
