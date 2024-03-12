@@ -50,3 +50,34 @@
     padding: 0.5rem;
 }
 
+
+.toast{
+    position: absolute;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}
+.toast2{
+    position: absolute;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}
+.toast1{
+    position: absolute;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}

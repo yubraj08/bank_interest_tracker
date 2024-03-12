@@ -27,7 +27,7 @@
                     ?>
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" value="<?php echo $data['bank_name']?>">
+                <input type="text" name="bank" value="<?php echo $data['bank_name']?>" required>
             </div>
                     <?php
                 }
@@ -35,17 +35,17 @@
 
             <div class="ed">
                 <label>Type</label>
-                <input type="text" name="type" value="<?php echo $data['type']?>">
+                <input type="text" name="type" value="<?php echo $data['type']?>" required>
             </div>
     
             <div class="ed">
                 <label>Minimum Balance</label>
-                <input type="number" step="0.0001" name="min" value="<?php echo $data['minBalance']?>">
+                <input type="number" step="0.0001" name="min" value="<?php echo $data['minBalance']?>" required>
             </div>
     
             <div class="ed">
                 <label>Interest Rate</label>
-                <input type="number" step="0.0001" name="rate" value="<?php echo $data['interest']?>">
+                <input type="number" step="0.0001" name="rate" value="<?php echo $data['interest']?>" required>
             </div>
             </div>
             <div class="editBtn">

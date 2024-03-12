@@ -22,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['emi'])) {
 
     $sql = mysqli_query($conn,$result);
     if($sql){
-        echo "Inserted into history";
-        header("location: ../history/loan.php?msg=Inserted");
+        header("location: ../history/loan.php?msg=$bank data saved");
     }
 
 

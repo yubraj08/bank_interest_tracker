@@ -1,9 +1,9 @@
 
-
 .container{
     display: flex;
     background-color: rgba(0, 0, 0, 0.127);
     min-height: 100vh;
+    max-width: 100vw;
    
     
 }
@@ -33,4 +33,14 @@
     border-radius: 1rem;
     width: 70vw;
     align-items: center;
+}
+
+.toast{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
 }

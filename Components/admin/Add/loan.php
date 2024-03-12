@@ -13,17 +13,17 @@
             <div class="editValue">
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank">
+                <input type="text" name="bank" required>
             </div>
 
             <div class="ed">
                 <label>Code</label>
-                <input type="text" name="code">
+                <input type="text" name="code" required>
             </div>
     
             <div class="ed">
                 <label>Personal Interest Rate</label>
-                <input type="number" step="0.0001" name="sRate">
+                <input type="number" step="0.0001" name="sRate" required>
             </div>
             </div>
             <div class="editBtn">

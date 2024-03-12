@@ -26,7 +26,7 @@
                     ?>
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" value="<?php echo $data['name']?>">
+                <input type="text" name="bank" value="<?php echo $data['name']?>" required>
             </div>
                     <?php
                 }
@@ -34,7 +34,7 @@
     
             <div class="ed">
                 <label>Personal Interest Rate</label>
-                <input type="number" step="0.0001" name="sRate" value="<?php echo $data['interest']?>">
+                <input type="number" step="0.0001" name="sRate" value="<?php echo $data['interest']?>" required>
             </div>
             </div>
             <div class="editBtn">

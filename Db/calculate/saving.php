@@ -21,8 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tax'])) {
 
     $sql = mysqli_query($conn,$result);
     if($sql){
-        echo "Inserted into history";
-        header("location: ../history/saving.php?msg=Inserted");
+        header("location: ../history/saving.php?msg=$bank data saved");
     }else{
         echo "error";
     }

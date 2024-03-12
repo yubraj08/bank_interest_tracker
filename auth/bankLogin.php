@@ -35,8 +35,26 @@
         </div>
         
     </div>
+    <?php
+        if(isset($_GET['msg'])){
+            ?>
+    <div class="toast" id="toast">
+        <?php
+            
+            $msg =  $_GET['msg'];
+            echo $msg;
+            ?>
+                </div>
+                <?php
+        }
+    ?>
     <?php 
     include "../Db/auth/dbBankLogin.php";
     ?>
+<script>
+    setTimeout(function(){
+        document.getElementById('toast').style.display = 'none';
+    }, 5000); // 4000 milliseconds = 4 seconds
+</script>
 </body>
 </html>

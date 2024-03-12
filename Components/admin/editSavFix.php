@@ -29,7 +29,7 @@
                     ?>
             <div class="ed">
                 <label>Bank/Finance Name</label>
-                <input type="text" name="bank" value="<?php echo $data['name']?>">
+                <input type="text" name="bank" value="<?php echo $data['name']?>" required>
             </div>
                     <?php
                 }
@@ -37,12 +37,12 @@
     
             <div class="ed">
                 <label>Saving Interest Rate</label>
-                <input type="number" step="0.0001" name="sRate" value="<?php echo $data['saving_rate']?>">
+                <input type="number" step="0.0001" name="sRate" value="<?php echo $data['saving_rate']?>" required>
             </div>
     
             <div class="ed">
                 <label>Fixed Interest Rate</label>
-                <input type="number" step="0.0001" name="fRate" value="<?php echo $data['fixed_rate']?>">
+                <input type="number" step="0.0001" name="fRate" value="<?php echo $data['fixed_rate']?>" required>
             </div>
             </div>
             <div class="editBtn">

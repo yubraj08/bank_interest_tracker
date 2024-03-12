@@ -10,6 +10,7 @@ if(isset($_POST['submit'])){
     $num = mysqli_fetch_assoc($sqls);
     if ($num == 0) {
         echo "Username or Email does not exist";
+        header("Location: ../auth/login.php?msg=Username or Email doesnot exist");
         exit();
     } 
 
@@ -28,10 +29,11 @@ if(isset($_POST['submit'])){
                 $_SESSION['name'] = "none";
              
 
-                header("Location: ../home/home.php?msg=Login_Sucess");
+                header("Location: ../home/home.php?msg=Login Sucess");
                 exit();
             } else {
-                echo "password incorrect";
+                echo "Password incorrect";
+                header("Location: ../auth/login.php?msg=Password Incorrect");
             }
 
 }

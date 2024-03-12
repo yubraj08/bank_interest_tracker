@@ -10,6 +10,7 @@ if(isset($_POST['submit'])){
     $num = mysqli_fetch_assoc($sqls);
     if ($num == 0) {
         echo "Bank name does not exist";
+        header("Location: ../auth/bankLogin.php?msg=Bank name doesnot exist");
         exit();
     } 
 
@@ -28,10 +29,11 @@ if(isset($_POST['submit'])){
                 $_SESSION['name'] = $result['name'];
              
 
-                header("Location: ../home/home.php?msg=Login_Sucess");
+                header("Location: ../home/home.php?msg=Login Sucess");
                 exit();
             } else {
                 echo "password incorrect";
+                header("Location: ../auth/bankLogin.php?msg=Password Incorrect");
             }
 
 }

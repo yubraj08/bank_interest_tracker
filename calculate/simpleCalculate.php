@@ -192,7 +192,7 @@ $.ajax({
         userId : userId},
        success: function(response) {
            console.log(response); // Log the server's response (you can handle it accordingly)
-           window.location.href = '../history/saving.php?msg=Inserted';
+           window.location.href = `../history/saving.php?msg=${bank} data saved`;
        }
    });
     }
